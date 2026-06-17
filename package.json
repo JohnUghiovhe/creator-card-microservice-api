@@ -1,21 +1,35 @@
 {
   "name": "creator-card-microservice-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Assessment for Creator Card microservice API",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "dev": "nodemon --env-file=.env app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JohnUghiovhe/creator-card-microservice-api.git"
+    "url": "git+https://github.com"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/JohnUghiovhe/creator-card-microservice-api/issues"
+    "url": "https://github.com"
   },
-  "homepage": "https://github.com/JohnUghiovhe/creator-card-microservice-api#readme",
+  "homepage": "https://github.com",
+  "dependencies": {
+    "mongodb": "^6.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "imports": {
+    "@app-core/*": "./core/*",
+    "@app/*": "./*"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }
