@@ -9,7 +9,6 @@ const appLogger = {
       console.log(JSON.stringify({ level: 'ERROR', timestamp: Date.now(), key, data }));
     },
     errorX(error, key) {
-      // Special formatting for critical application errors
       console.log(JSON.stringify({ 
         level: 'CRITICAL', 
         timestamp: Date.now(), 

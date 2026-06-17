@@ -1,33 +1,29 @@
 {
   "name": "creator-card-microservice-api",
   "version": "1.0.0",
-  "description": "Assessment for Creator Card microservice API",
+  "description": "Tailored Backend Microservice for Creator Cards",
   "main": "app.js",
+  "type": "commonjs",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon --env-file=.env app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com"
-  },
-  "homepage": "https://github.com",
   "dependencies": {
-    "mongodb": "^6.3.0"
+    "@app-core/errors": "file:core/errors",
+    "@app-core/logger": "file:core/logger",
+    "@app-core/mongoose": "file:core/mongoose",
+    "@app-core/randomness": "file:core/randomness",
+    "@app-core/server": "file:core/express",
+    "@app-core/validator": "file:core/validator-vsl",
+    "@app/messages": "file:messages",
+    "@app/services": "file:services",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0",
+    "pino": "^8.19.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
-  },
-  "imports": {
-    "@app-core/*": "./core/*",
-    "@app/*": "./*"
   },
   "engines": {
     "node": ">=18.0.0"

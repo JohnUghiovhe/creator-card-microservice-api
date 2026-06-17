@@ -3,7 +3,6 @@ const ERROR_CODE = {
     NOTFOUND: 'NOTFOUND',
     INVLDREQ: 'INVLDREQ',
     INVLDDATA: 'INVLDDATA',
-    // Custom business error codes 
     SL02: 'SL02',
     AC01: 'AC01',
     AC05: 'AC05',
@@ -16,7 +15,7 @@ const ERROR_CODE = {
   function throwAppError(message, errorCode) {
     const error = new Error(message);
     error.code = errorCode;
-    error.isAppError = true; // Flag for centralized framework error catcher
+    error.isAppError = true;
     throw error;
   }
   

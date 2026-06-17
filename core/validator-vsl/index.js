@@ -2,7 +2,6 @@ const { throwAppError, ERROR_CODE } = require('@app-core/errors');
 
 const validator = {
   parse(specString) {
-    // Mimics parsing the custom VSL DSL text into a structural map
     return { rawSpec: specString };
   },
   
@@ -11,7 +10,15 @@ const validator = {
       throwAppError('Missing request body data payload', ERROR_CODE.VALIDATIONERR);
     }
     
-    // Core structural check fallback wrapper
+    // If it is a GET or DELETE lookup request payload, bypass the creation checks
+    if (inputData.slug) {
+      if (inputData.slug.length < 5) {
+        throwAppError('Slug must be between 5 and 50 characters', ERROR_CODE.VALIDATIONERR);
+      }
+      return inputData;
+    }
+
+    // Standard baseline rules validation used for creation operations
     if (!inputData.title || inputData.title.length < 3) {
       throwAppError('Title must be between 3 and 100 characters', ERROR_CODE.VALIDATIONERR);
     }

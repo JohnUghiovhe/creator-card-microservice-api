@@ -1,4 +1,4 @@
-const { connectToCluster, getDatabaseConnection } = require('./create-connection');
+const { connectToCluster, getDatabaseConnection } = require('./create-connection.js');
 
 module.exports = {
   connectToCluster,
