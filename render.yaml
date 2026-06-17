@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: creator-card-microservice-api
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false
+        placeholder: "Paste your live MongoDB Atlas connection string here"
